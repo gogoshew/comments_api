@@ -14,7 +14,7 @@ class Article(models.Model):
 class Comment(models.Model):
     comment_text = models.CharField(max_length=200, verbose_name='Текст комментария')
     pub_date = models.DateTimeField(auto_now_add=True)
-    article = models.ForeignKey(Article, related_name='comment', verbose_name='Комментарий', on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, related_name='comment', verbose_name='Статья', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.comment_text
@@ -23,7 +23,7 @@ class Comment(models.Model):
 class CommentAnswer(models.Model):
     answer_text = models.CharField(max_length=200, verbose_name='Ответ', null=True)
     pub_date = models.DateTimeField(auto_now_add=True)
-    comment = models.ForeignKey(Comment, related_name='comment', verbose_name='Ответ', on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, related_name='answers', verbose_name='Комментарий', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.answer_text
