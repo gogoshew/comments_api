@@ -10,7 +10,7 @@ class CommentAnswerSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     # Включаем все ответы на комментарий
-    answers = CommentAnswerSerializer(many=True)
+    answers = CommentAnswerSerializer(many=True, read_only=True)
 
     class Meta:
         model = Comment
