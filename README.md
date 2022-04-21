@@ -78,19 +78,11 @@ python manage.py runserver
     * article_description: Содержание статьи
 
 
-### Просмотр существующих комментариев или создание нового:
+### Просмотр существующих комментариевс ответами (если есть) или создание нового:
 * Request method: GET, POST
 * URL: http://127.0.0.1:8000/api/comments/
 * Body:
     * article: id статьи
     * comment_text: Текст комментария
     * pub_date: Дата и время публикации комментария, format: YYYY-MM-DD HH:MM:SS
-    
-
-### Просмотр существующих ответов или создание нового:
-* Request method: GET, POST
-* URL: http://127.0.0.1:8000/api/answers/
-* Body:
-    * answer_text: Текст ответа
-    * pub_date: Дата и время публикации ответа, format: YYYY-MM-DD HH:MM:SS
-    * comment: id комментария
+    * reply: Ответ на комментарий
