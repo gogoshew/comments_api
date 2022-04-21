@@ -23,7 +23,7 @@ class Comment(models.Model):
 class CommentAnswer(models.Model):
     answer_text = models.CharField(max_length=200, verbose_name='Ответ', null=True)
     pub_date = models.DateTimeField(auto_now_add=True)
-    comment = models.ForeignKey(Comment, related_name='comment', verbose_name='Комментарий', on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, related_name='comment', verbose_name='Ответ', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.answer_text
