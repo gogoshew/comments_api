@@ -14,7 +14,7 @@ class Article(models.Model):
 class Comment(models.Model):
     comment_text = models.CharField(max_length=200, verbose_name='Текст комментария')
     pub_date = models.DateTimeField(auto_now_add=True)
-    article = models.ForeignKey(Article, related_name='comment', verbose_name='Статья', on_delete=models.CASCADE)
+    article = models.ForeignKey(Article, related_name='article', verbose_name='Статья', on_delete=models.CASCADE)
     reply = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='+')
 
     @property
